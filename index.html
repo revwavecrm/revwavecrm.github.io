@@ -51,6 +51,12 @@
       margin-top: 20px;
     }
 
+    #confirmationMessage {
+    display: block; /* Ensure the message appears on its own line */
+    color: green;
+    margin-top: 10px; /* Add space above the message */
+}
+
     input[type="email"] {
       padding: 12px;
       width: 320px;
@@ -71,10 +77,11 @@
     }
 
     #bg {
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
-      right: 0;
+      width: 100%;
+      height: 100%;
       z-index: -1;
     }
   </style>
@@ -91,9 +98,10 @@
     <h3>Revwave is a copilot for enhancing CRM platforms with AI automation.</h3>
     <br>
     <h3>Mobile app and website coming soon.</h3>
-    <form action="#" method="post">
+    <form id="waitlistForm" action="" method="post">
       <input type="email" name="email" placeholder="Enter your email to join the waitlist" required>
       <input type="submit" value="Join">
+      <div id="confirmationMessage" style="display: none; color: green;">Thank you, we have received your submission</div>
     </form>
   </div>
   <script type="text/javascript" src="js/particles.min.js"></script>
@@ -102,8 +110,12 @@
 <script>
   document.getElementById("waitlistForm").addEventListener("submit", function(event) {
       event.preventDefault(); // Prevent the default form submission behavior
-      // Add your desired action here, such as showing a confirmation message
-      alert("Thank you for joining the waitlist!");
+      
+      // Display the confirmation message
+      document.getElementById("confirmationMessage").style.display = "block";
+      
+      // Clear the input field after submission
+      document.getElementById("emailInput").value = "";
   });
 </script>
 </html>
