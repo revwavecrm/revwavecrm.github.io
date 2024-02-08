@@ -85,7 +85,7 @@
     <!-- this is where the particles are -->
   </div> 
   <div class="container">
-    <img src="LOGO.png" alt="Revwave Logo">
+    <img src="logo.jpg" alt="Revwave Logo">
     <h1>Revwave</h1>
     <br>
     <h3>Revwave is a copilot for enhancing CRM platforms with AI automation.</h3>
@@ -99,6 +99,13 @@
   <script type="text/javascript" src="js/particles.min.js"></script>
   <script type="text/javascript" src="js/custom.js"></script>
 </body>
+<script>
+  document.getElementById("waitlistForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent the default form submission behavior
+      // Add your desired action here, such as showing a confirmation message
+      alert("Thank you for joining the waitlist!");
+  });
+</script>
 </html>
 
 <!-- 
